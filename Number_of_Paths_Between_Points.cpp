@@ -19,11 +19,11 @@ int paths(int x, int y)
 {
 
     int n = x + y;
-    int k = min(x, y);
+    int k = min(x, y), h = max(x, y);
     int C = 0;
 
-    if (n == 100)
-        return 100;
+    if ((n - h) == 1)
+        return h;
     C = recursion(n) / (recursion((n - k)) * recursion(k));
 
     return C;
